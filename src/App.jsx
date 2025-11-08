@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import Hero from "./components/hero";
+import Hero from "./components/Hero";
 import Nav from "./components/Nav";
 import ProductsCard from "./components/ProductsCard";
 import TrendingProduct from "./components/TrendingProduct";
 import CategoryNav from "./components/CategoryNav";
 import CategoryShowcase from "./components/CategoryShowcase";
-import Footer from "./components/footer";
+import Footer from "./components/Footer";
 import ContactSection from "./components/ContactSection";
 
 function App() {
