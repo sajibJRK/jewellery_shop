@@ -1,0 +1,272 @@
+[
+  {
+    "id": 1,
+    "name": "Royal Heritage Necklace",
+    "material": "Gold",
+    "karat": "22K",
+    "price": 125000,
+    "category": "Classic",
+    "image": "https://i.ibb.co.com/wF6n1G6G/retouch-2025110117574899.png"
+  },
+  {
+    "id": 2,
+    "name": "Elegant Twist Bangle",
+    "material": "Gold",
+    "karat": "21K",
+    "price": 68000,
+    "category": "Modern",
+    "image": "https://i.ibb.co.com/9HkHBdKk/img-8.png"
+  },
+  {
+    "id": 3,
+    "name": "Pearl Drop Earrings",
+    "material": "White Gold",
+    "karat": "18K",
+    "price": 52000,
+    "category": "Classic",
+    "image": "https://i.ibb.co.com/ymRVF9TM/img-9.png"
+  },
+  {
+    "id": 4,
+    "name": "Infinity Chain",
+    "material": "Gold",
+    "karat": "22K",
+    "price": 88000,
+    "category": "Modern",
+    "image": "https://i.ibb.co.com/v4DMZLy6/img-5.png"
+  },
+  {
+    "id": 5,
+    "name": "Queen’s Crown Ring",
+    "material": "Gold",
+    "karat": "24K",
+    "price": 45000,
+    "category": "Classic",
+    "image": "https://i.ibb.co.com/8DP4gnjf/img-3.png"
+  },
+  {
+    "id": 6,
+    "name": "Diamond Cut Bracelet",
+    "material": "White Gold",
+    "karat": "18K",
+    "price": 97000,
+    "category": "Modern",
+    "image": "https://i.ibb.co.com/SXZd62fL/img-12.png"
+  },
+  {
+    "id": 7,
+    "name": "Traditional Bridal Set",
+    "material": "Gold",
+    "karat": "22K",
+    "price": 215000,
+    "category": "Classic",
+    "image": "https://i.ibb.co.com/nN1yhFwX/traditional-indian-wedding-jewelry.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Minimalist Gold Chain",
+    "material": "Gold",
+    "karat": "21K",
+    "price": 59000,
+    "category": "Modern",
+    "image": "https://i.ibb.co.com/CsMD7hMW/img-4.png"
+  },
+  {
+    "id": 9,
+    "name": "Royal Lotus Pendant",
+    "material": "Gold",
+    "karat": "22K",
+    "price": 73000,
+    "category": "Classic",
+    "image": "https://i.ibb.co.com/r2X6qs8F/img-14.png"
+  },
+  {
+    "id": 10,
+    "name": "Twinkle Star Earrings",
+    "material": "White Gold",
+    "karat": "18K",
+    "price": 61000,
+    "category": "Modern",
+    "image": "https://i.ibb.co.com/PsqDY6zg/images-removebg-preview.png"
+  },
+  {
+    "id": 11,
+    "name": "Pure Silver Bracelet",
+    "material": "Silver",
+    "karat": "925 Silver",
+    "price": 12000,
+    "category": "Modern",
+    "image": "https://i.ibb.co.com/FLBWQVHt/img-2.png"
+  },
+  {
+    "id": 12,
+    "name": "Silver Heart Pendant",
+    "material": "Silver",
+    "karat": "925 Silver",
+    "price": 8500,
+    "category": "Classic",
+    "image": "https://i.ibb.co.com/DP5Wwv7T/img-11.png"
+  },
+  {
+    "id": 13,
+    "name": "Elegant Silver Ring",
+    "material": "Silver",
+    "karat": "925 Silver",
+    "price": 9500,
+    "category": "Modern",
+    "image": "https://i.ibb.co.com/HTpK8J29/img-7.png"
+  },
+  {
+    "id": 14,
+    "name": "Floral Silver Earrings",
+    "material": "Silver",
+    "karat": "925 Silver",
+    "price": 11000,
+    "category": "Classic",
+    "image": "https://i.ibb.co.com/MDkB89Sx/img-6.png"
+  },
+  {
+    "id": 15,
+    "name": "Diamond Princess Ring",
+    "material": "Diamond",
+    "karat": "18K Base",
+    "price": 185000,
+    "category": "Modern",
+    "image": "https://i.ibb.co.com/r2Dnf6q3/img-1.png"
+  },
+  {
+    "id": 16,
+    "name": "Eternal Shine Necklace",
+    "material": "Diamond",
+    "karat": "18K Base",
+    "price": 320000,
+    "category": "Classic",
+    "image": "https://example.com/images/diamond-necklace1.jpg"
+  },
+  {
+    "id": 17,
+    "name": "Royal Diamond Earrings",
+    "material": "Diamond",
+    "karat": "18K Base",
+    "price": 210000,
+    "category": "Modern",
+    "image": "https://example.com/images/diamond-earrings1.jpg"
+  },
+  {
+    "id": 18,
+    "name": "Diamond Stud Bracelet",
+    "material": "Diamond",
+    "karat": "18K Base",
+    "price": 265000,
+    "category": "Classic",
+    "image": "https://example.com/images/diamond-bracelet1.jpg"
+  },
+  {
+    "id": 19,
+    "name": "Gold & Diamond Royal Ring",
+    "material": "Gold + Diamond",
+    "karat": "22K Gold + 18K Diamond",
+    "price": 145000,
+    "category": "Classic",
+    "image": "https://example.com/images/golddiamond-ring1.jpg"
+  },
+  {
+    "id": 20,
+    "name": "Modern Gold & Diamond Necklace",
+    "material": "Gold + Diamond",
+    "karat": "21K Gold + 18K Diamond",
+    "price": 195000,
+    "category": "Modern",
+    "image": "https://example.com/images/golddiamond-necklace1.jpg"
+  },
+  {
+    "id": 21,
+    "name": "Gold & Diamond Bracelet",
+    "material": "Gold + Diamond",
+    "karat": "22K Gold + 18K Diamond",
+    "price": 165000,
+    "category": "Classic",
+    "image": "https://example.com/images/golddiamond-bracelet1.jpg"
+  },
+  {
+    "id": 22,
+    "name": "Silver & Diamond Pendant",
+    "material": "Silver + Diamond",
+    "karat": "925 Silver + 18K Diamond",
+    "price": 68000,
+    "category": "Modern",
+    "image": "https://example.com/images/silverdiamond-pendant1.jpg"
+  },
+  {
+    "id": 23,
+    "name": "Vintage Gold Ring",
+    "material": "Gold",
+    "karat": "22K",
+    "price": 55000,
+    "category": "Classic",
+    "image": "https://example.com/images/gold-ring2.jpg"
+  },
+  {
+    "id": 24,
+    "name": "Trendy Silver Chain",
+    "material": "Silver",
+    "karat": "925 Silver",
+    "price": 14500,
+    "category": "Modern",
+    "image": "https://example.com/images/silver-chain1.jpg"
+  },
+  {
+    "id": 25,
+    "name": "Pure Diamond Pendant",
+    "material": "Diamond",
+    "karat": "18K Base",
+    "price": 275000,
+    "category": "Classic",
+    "image": "https://example.com/images/diamond-pendant1.jpg"
+  },
+  {
+    "id": 26,
+    "name": "Luxury Gold Bracelet",
+    "material": "Gold",
+    "karat": "21K",
+    "price": 88000,
+    "category": "Modern",
+    "image": "https://example.com/images/gold-bracelet2.jpg"
+  },
+  {
+    "id": 27,
+    "name": "Classic Silver Anklet",
+    "material": "Silver",
+    "karat": "925 Silver",
+    "price": 12500,
+    "category": "Classic",
+    "image": "https://example.com/images/silver-anklet1.jpg"
+  },
+  {
+    "id": 28,
+    "name": "Diamond Halo Earrings",
+    "material": "Diamond",
+    "karat": "18K Base",
+    "price": 195000,
+    "category": "Modern",
+    "image": "https://example.com/images/diamond-earrings2.jpg"
+  },
+  {
+    "id": 29,
+    "name": "Gold & Diamond Crown Set",
+    "material": "Gold + Diamond",
+    "karat": "22K Gold + 18K Diamond",
+    "price": 285000,
+    "category": "Classic",
+    "image": "https://example.com/images/golddiamond-set1.jpg"
+  },
+  {
+    "id": 30,
+    "name": "Minimal Diamond Nose Pin",
+    "material": "Diamond",
+    "karat": "18K Base",
+    "price": 35000,
+    "category": "Modern",
+    "image": "https://example.com/images/diamond-nosepin1.jpg"
+  }
+]

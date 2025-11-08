@@ -1,0 +1,6 @@
+@import "tailwindcss";
+@plugin "daisyui";
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }
+@import url('https://fonts.googleapis.com/css2?family:Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
