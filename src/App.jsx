@@ -70,7 +70,6 @@ function App() {
                <div>
                   <TrendingProduct products={products} />
                </div>
-
                {/* Best Selling */}
                <div className="text-center my-10">
                   <h1 className="text-4xl md:text-6xl font-bold text-white drop-shadow-[0_0_3px_rgba(247,206,57,1)] tracking-wide uppercase">

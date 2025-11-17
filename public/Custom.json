@@ -1,0 +1,42 @@
+{
+  "title": "Custom Orders",
+  "subtitle": "Create your own custom jewellery",
+  "description": "Design personalized jewellery by choosing materials, gemstones, and your preferred style.",
+  
+  "formFields": {
+    "customerName": "string",
+    "phone": "string",
+    "email": "string",
+
+    "material": ["Gold", "White Gold", "Silver", "Platinum"],
+    "gemstone": ["Diamond", "Ruby"],
+    "designType": ["Necklace", "Ring", "Earrings", "Bangle"],
+
+    "budget": "number",
+    "notes": "string"
+  },
+
+  "examples": [
+    {
+      "id": 1,
+      "name": "Diamond Bridal Necklace",
+      "material": "Gold",
+      "gemstone": "Ruby",
+      "image": "https://i.ibb.co.com/tpqYxbYp/10903434-GR-2e77031f-50d6-490b-8336-489e7362e588.webp"
+    },
+    {
+      "id": 2,
+      "name": "Diamond Engagement Ring",
+      "material": "White Gold",
+      "gemstone": "Diamond",
+      "image": "https://i.ibb.co.com/LDHt5VtR/22.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Emerald Classic Earrings",
+      "material": "Gold",
+      "gemstone": "Emerald",
+      "image": "https://i.ibb.co.com/JRjVT3HJ/images-1.jpg"
+    }
+  ]
+}

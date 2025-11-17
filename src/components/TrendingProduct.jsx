@@ -112,6 +112,15 @@ export default function TrendingProduct({ products }) {
     scrollRef.current.scrollBy({ left: cardWidth + gap, behavior: "smooth" });
 
   return (
+    <>
+    <div className="text-center my-10">
+                  <h1 className="text-4xl md:text-6xl font-bold text-white drop-shadow-[0_0_3px_rgba(247,206,57,1)] tracking-wide uppercase">
+                     Find New-in
+                  </h1>
+                  <p className="text-lg md:text-2xl text-amber-200 mt-2 font-semibold tracking-wide">
+                     Top Trending
+                  </p>
+               </div>
     <div className="relative w-full">
       {/* Left Button */}
       <button
@@ -156,5 +165,6 @@ export default function TrendingProduct({ products }) {
         <IoChevronForward size={20} />
       </button>
     </div>
+    </>
   );
 }

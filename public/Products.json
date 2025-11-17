@@ -141,7 +141,7 @@
     "karat": "18K Base",
     "price": 320000,
     "category": "Classic",
-    "image": "https://example.com/images/diamond-necklace1.jpg"
+    "image": "https://i.ibb.co.com/NnZ9QSQh/Eternal-Shine-Necklace.png"
   },
   {
     "id": 17,
@@ -150,7 +150,7 @@
     "karat": "18K Base",
     "price": 210000,
     "category": "Modern",
-    "image": "https://example.com/images/diamond-earrings1.jpg"
+    "image": "https://i.ibb.co.com/Myk4LjTF/Royal-Diamond-Earrings.png"
   },
   {
     "id": 18,
@@ -159,7 +159,7 @@
     "karat": "18K Base",
     "price": 265000,
     "category": "Classic",
-    "image": "https://example.com/images/diamond-bracelet1.jpg"
+    "image": "https://i.ibb.co.com/spzR53L2/Diamond-Stud-Bracelet.png"
   },
   {
     "id": 19,
@@ -168,7 +168,7 @@
     "karat": "22K Gold + 18K Diamond",
     "price": 145000,
     "category": "Classic",
-    "image": "https://example.com/images/golddiamond-ring1.jpg"
+    "image": "https://i.ibb.co.com/Zp8Bb1kL/Gold-Diamond-Royal-Ring.png"
   },
   {
     "id": 20,
@@ -177,7 +177,7 @@
     "karat": "21K Gold + 18K Diamond",
     "price": 195000,
     "category": "Modern",
-    "image": "https://example.com/images/golddiamond-necklace1.jpg"
+    "image": "https://i.ibb.co.com/VckSv22Q/Modern-Gold-Diamond-Necklace.png"
   },
   {
     "id": 21,
@@ -186,7 +186,7 @@
     "karat": "22K Gold + 18K Diamond",
     "price": 165000,
     "category": "Classic",
-    "image": "https://example.com/images/golddiamond-bracelet1.jpg"
+    "image": "https://i.ibb.co.com/zHfx2rn3/Gold-Diamond-Bracelet.png"
   },
   {
     "id": 22,
@@ -195,7 +195,7 @@
     "karat": "925 Silver + 18K Diamond",
     "price": 68000,
     "category": "Modern",
-    "image": "https://example.com/images/silverdiamond-pendant1.jpg"
+    "image": "https://i.ibb.co.com/7t86nC91/Silver-Diamond-Pendant.png"
   },
   {
     "id": 23,
@@ -204,7 +204,7 @@
     "karat": "22K",
     "price": 55000,
     "category": "Classic",
-    "image": "https://example.com/images/gold-ring2.jpg"
+    "image": "https://i.ibb.co.com/7JgVjPDX/Vintage-Gold-Ring.png"
   },
   {
     "id": 24,
@@ -213,7 +213,7 @@
     "karat": "925 Silver",
     "price": 14500,
     "category": "Modern",
-    "image": "https://example.com/images/silver-chain1.jpg"
+    "image": "https://i.ibb.co.com/0pZ9jVPD/Trendy-Silver-Chain.png"
   },
   {
     "id": 25,
@@ -222,7 +222,7 @@
     "karat": "18K Base",
     "price": 275000,
     "category": "Classic",
-    "image": "https://example.com/images/diamond-pendant1.jpg"
+    "image": "https://i.ibb.co.com/GQH364ZD/Pure-Diamond-Pendant.png"
   },
   {
     "id": 26,
@@ -231,7 +231,7 @@
     "karat": "21K",
     "price": 88000,
     "category": "Modern",
-    "image": "https://example.com/images/gold-bracelet2.jpg"
+    "image": "https://i.ibb.co.com/hJvYFgCQ/Luxury-Gold-Bracelet.png"
   },
   {
     "id": 27,
@@ -240,7 +240,7 @@
     "karat": "925 Silver",
     "price": 12500,
     "category": "Classic",
-    "image": "https://example.com/images/silver-anklet1.jpg"
+    "image": "https://i.ibb.co.com/RpZdtHV4/Classic-Silver-Anklet.png"
   },
   {
     "id": 28,
@@ -249,7 +249,7 @@
     "karat": "18K Base",
     "price": 195000,
     "category": "Modern",
-    "image": "https://example.com/images/diamond-earrings2.jpg"
+    "image": "https://i.ibb.co.com/Fk3Djqjk/Diamond-Halo-Earrings.png"
   },
   {
     "id": 29,
@@ -258,7 +258,7 @@
     "karat": "22K Gold + 18K Diamond",
     "price": 285000,
     "category": "Classic",
-    "image": "https://example.com/images/golddiamond-set1.jpg"
+    "image": "https://i.ibb.co.com/mCrb0WH9/Gold-Diamond-Crown-Set.png"
   },
   {
     "id": 30,
@@ -267,6 +267,6 @@
     "karat": "18K Base",
     "price": 35000,
     "category": "Modern",
-    "image": "https://example.com/images/diamond-nosepin1.jpg"
+    "image": "https://i.ibb.co.com/FQfcsv9/Minimal-Diamond-Nose-Pin.png"
   }
 ]

@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { use, useState } from "react";
 import { FaShoppingCart } from "react-icons/fa";
 import { IoHeart } from "react-icons/io5";
+import { ProductsContext } from "../contaxt/ProductsContext";
 
 export default function Card({ item }) {
    const [favourite, setFavourite] = useState(false);
-   const [ AddToCart , setAddToCart] = useState(false)
+   const [AddToCart, setAddToCart] = useState(false);
+   const { setCartItems } = use(ProductsContext);
 
    return (
       <div
@@ -12,19 +14,32 @@ export default function Card({ item }) {
          className="relative group bg-linear-to-b from-[#0F1B2B] to-[#1C2A3B] border border-amber-400 rounded-xl w-[230px] md:w-[300px] h-[380px] my-6 text-center  shadow-[0_0_5px_rgba(247,206,57,0.4)] hover:shadow-[0_0_20px_rgba(247,206,57,0.8)]  transition-all hover:-translate-y-3 duration-700 "
       >
          {/* Favorite & Cart Buttons */}
-         <div className="absolute top-8 right-8 flex flex-col gap-2 text-md group-hover:scale-150 opacity-0 group-hover:opacity-100 transform group-hover:translate-x-0 translate-x-7 transition-all duration-500">
+         <div className="absolute top-8 right-12 md:right-8 flex flex-col gap-2 text-md group-hover:scale-150  md:opacity-0 group-hover:opacity-100 transform group-hover:translate-x-0 translate-x-7 transition-all duration-500">
             <button
-               onClick={() => setFavourite(!favourite)}
+               onClick={() => {
+                  setFavourite(!favourite);
+               }}
                className={`transition-all duration-300 hover:scale-125 ${
-                  favourite?
-                      "text-[#FF4D67] "
-                     : "text-[#F7CE39] "
+                  favourite ? "text-[#FF4D67] " : "text-[#F7CE39] "
                }`}
             >
                <IoHeart />
             </button>
-            <button onClick={()=> setAddToCart(!AddToCart)} className={`transition-all duration-300 hover:scale-125
-               ${AddToCart ? "text-green-500" :"text-[#F7CE39] "}`}>
+            <button
+               onClick={() => {
+                  setAddToCart(!AddToCart);
+                  setCartItems((prev) => {
+                     // যদি item already cart এ থাকে → remove কর
+                     if (prev.find((i) => i.id === item.id)) {
+                        return prev.filter((i) => i.id !== item.id);
+                     }
+                     // না থাকলে → add কর
+                     return [...prev, item];
+                  });
+               }}
+               className={`transition-all duration-300 hover:scale-125
+               ${AddToCart ? "text-green-500" : "text-[#F7CE39] "}`}
+            >
                <FaShoppingCart />
             </button>
          </div>
