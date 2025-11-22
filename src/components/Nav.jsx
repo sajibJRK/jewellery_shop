@@ -3,6 +3,7 @@ import { NavLink } from "react-router";
 import { ProductsContext } from "../contaxt/ProductsContext";
 import ProductsCard from "./ProductsCard";
 import CartSection from "./CartSection";
+import { UserContext } from "../contaxt/userContext";
 
 function Nav() {
    const {
@@ -23,9 +24,13 @@ function Nav() {
       category,
       material,
       cartItems,
+      likeItem,
    } = use(ProductsContext);
+   const { user, setUser, login, gest, logout, setgest, userdata, gestdata } =
+      use(UserContext);
    const [menuOpen, setMenuOpen] = useState(false);
    const [showSuggestions, setShowSuggestions] = useState(false);
+   const [ViewUser, setViewUser] = useState(false);
 
    // Filter suggestions safely
    const suggestions =
@@ -42,7 +47,7 @@ function Nav() {
       setSearchTerm("");
       setShowSuggestions(false);
    };
-
+   const [viewlike, setviewlike] = useState(false);
    return (
       <>
          <div>
@@ -140,73 +145,219 @@ function Nav() {
                </div>
 
                {/* Desktop Menu */}
+
                <div className="hidden md:block">
                   <ul className="font-bold flex gap-4 items-center justify-center">
-                     <NavLink to="/">
+                     <NavLink to="/root">
                         {" "}
                         <li className="hover:bg-gray-100 py-1 px-3 rounded-sm cursor-pointer hover:scale-110 transition-transform duration-300">
                            Home
                         </li>
                      </NavLink>
-                     <NavLink to="/aboutus">
-                        <li className="hover:bg-gray-100 py-1 px-3 rounded-sm cursor-pointer hover:scale-110 transition-transform duration-300">
-                           About Us
-                        </li>
-                     </NavLink>
-
-                     <NavLink to="/contact">
-                        <li className="hover:bg-gray-100 py-1 px-3 rounded-sm cursor-pointer hover:scale-110 transition-transform duration-300">
-                           Contact
-                        </li>
-                     </NavLink>
-
-                     <NavLink to="/">
-                        <li className="w-20 p-0.5 rounded-md bg-gray-800">
-                           <img src="/image/logo2.png" alt="logo" />
-                        </li>
-                     </NavLink>
-
-                     <NavLink to="/customorders">
-                        <li className="hover:bg-gray-100 py-1 px-3 rounded-sm cursor-pointer hover:scale-110 transition-transform duration-300">
-                           Custom Orders
-                        </li>
-                     </NavLink>
-
-                     <NavLink to="/offers">
+                     <NavLink to="offers">
                         <li className="hover:bg-gray-100 py-1 px-3 rounded-sm cursor-pointer hover:scale-110 transition-transform duration-300">
                            Offers
                         </li>
                      </NavLink>
 
-                     <NavLink to="/silver">
+                     <NavLink to="/root">
+                        <li className="w-20 p-0.5 rounded-md bg-gray-800">
+                           <img src="/image/logo2.png" alt="logo" />
+                        </li>
+                     </NavLink>
+
+                     <NavLink to="customorders">
                         <li className="hover:bg-gray-100 py-1 px-3 rounded-sm cursor-pointer hover:scale-110 transition-transform duration-300">
-                           Silver
+                           Custom Orders
+                        </li>
+                     </NavLink>
+
+                     <NavLink to="aboutus">
+                        <li className="hover:bg-gray-100 py-1 px-3 rounded-sm cursor-pointer hover:scale-110 transition-transform duration-300">
+                           About Us
                         </li>
                      </NavLink>
                   </ul>
                </div>
 
                {/* Right Icons */}
+               {viewlike && (
+                  <div className="absolute top-12 right-0 w-48 md:w-64 max-h-36 md:max-h-80 p-1 rounded-md border-2 border-amber-200 overflow-y-scroll overflow-x-hidden bg-black text-gray-50">
+                     {likeItem.length > 0 ? (
+                        likeItem.map((item, index) => (
+                           <div
+                              key={index}
+                              className="flex gap-1 items-center border border-gray-500 hover:bg-gray-500"
+                           >
+                              <div className="w-8 p-2 md:w-12 h-8 md:h-12">
+                                 <img
+                                    className="w-full h-full"
+                                    src={item.image}
+                                    alt="image"
+                                 />
+                              </div>
+                              <p className="md:text-xl text-nowrap">
+                                 {item.name}
+                              </p>
+                           </div>
+                        ))
+                     ) : (
+                        <div>
+                           <p>You haven't added any items yet</p>
+                        </div>
+                     )}
+                  </div>
+               )}
+
                <div className="flex items-center gap-3">
                   <ul className="flex gap-3">
-                     <li className="hover:bg-gray-100 rounded-full cursor-pointer hover:scale-110 transition-transform duration-300">
-                        <a href="#">
-                           <i className="fa-solid fa-user"></i>
-                        </a>
-                     </li>
-                     <li className="hover:bg-gray-100 rounded-full cursor-pointer hover:scale-110 transition-transform duration-300">
-                        <a href="#">
-                           <i className="fa-solid fa-heart"></i>
-                        </a>
-                     </li>
-                     <NavLink to={'/cartsection'}>
-                     <div className="relative">
-                        <p className="absolute -top-2.5 -right-2.5 z-10 text-white bg-red-500 w-4 h-4 flex justify-center items-center rounded-full font-bold text-md px-0.5">{cartItems.length}</p> 
+                     <button onClick={() => setViewUser(!ViewUser)}>
                         <li className="hover:bg-gray-100 rounded-full cursor-pointer hover:scale-110 transition-transform duration-300">
-                           <i className="fa-solid fa-cart-shopping"></i>
-                     </li>
-                     </div>
-                        
+                           <div className="w-6 rounded-full">
+                              <img
+                                 className="w-full rounded-full"
+                                 src={
+                                    user
+                                       ? userdata.image
+                                       : gest
+                                       ? gestdata.image
+                                       : null
+                                 }
+                                 alt=""
+                              />
+                           </div>
+                        </li>
+                     </button>
+                     {!user && !gest && (
+                        <button
+                           className="bg-red-600 text-white py-0.5 px-2 rounded-md"
+                           onClick={() => {
+                              setUser(null);
+                              window.location.replace("/");
+                           }}
+                        >
+                           login
+                        </button>
+                     )}
+
+                     {ViewUser && (
+                        <section>
+                           <section className="">
+                              {user && (
+                                 <div className="absolute bg-gray-500 top-12 rounded-md right-6 w-[180px] border ">
+                                    <div>
+                                       <div className="w-20 h-20 mx-auto mt-2">
+                                          <img
+                                             className="w-full h-full rounded-full"
+                                             src={userdata.image}
+                                             alt=""
+                                          />
+                                       </div>
+                                       <h1 className="text-center font-semibold text-xl">
+                                          {userdata.name}
+                                       </h1>
+
+                                       <div className="flex justify-around py-3">
+                                          <NavLink to="cartsection">
+                                             <button className="bg-green-700 cursor-pointer px-2 py-1 rounded-md hover:bg-green-600">
+                                                go to cart
+                                             </button>
+                                          </NavLink>
+                                          <button
+                                             onClick={() => {
+                                                setUser(null);
+                                                window.location.replace("/");
+                                             }}
+                                             className="bg-red-700 cursor-pointer px-2 py-1 rounded-md hover:bg-red-600"
+                                          >
+                                             Log out
+                                          </button>
+                                       </div>
+                                    </div>
+                                 </div>
+                              )}
+                           </section>
+                           <section>
+                              {gest && (
+                                 <div className="absolute bg-gray-500 rounded-md top-12 right-6 w-[180px] border ">
+                                    <div>
+                                       <div className="w-20 h-20 mx-auto mt-2">
+                                          <img
+                                             className="w-full h-full rounded-full"
+                                             src={gestdata.image}
+                                             alt=""
+                                          />
+                                       </div>
+                                       <h1 className="text-center font-semibold text-xl">
+                                          gest user
+                                       </h1>
+                                       <div className="flex justify-around py-3">
+                                          <NavLink to="cartsection">
+                                             <button className="bg-green-700 cursor-pointer px-1.5 py-1 rounded-md hover:bg-green-600 text-nowrap">
+                                                go to cart
+                                             </button>
+                                          </NavLink>
+
+                                          <button
+                                             onClick={() => {
+                                                setgest(null);
+                                                window.location.replace("/");
+                                             }}
+                                             className="bg-red-700 cursor-pointer px-1.5 py-1 rounded-md hover:bg-red-600 text-nowrap"
+                                          >
+                                             please login
+                                          </button>
+                                       </div>
+                                    </div>
+                                 </div>
+                              )}
+                           </section>
+                           <section>
+                              {!user && !gest && (
+                                 <div className="absolute rounded-md bg-gray-500 top-12 right-6 w-[180px] border ">
+                                    <div>
+                                       <div>
+                                          <p className="text-center font-bold text-red-700 ">
+                                             You’re not logged in
+                                          </p>
+                                          <NavLink to="/">
+                                             <div className="flex justify-center py-3">
+                                                <button className="bg-red-700 cursor-pointer  px-2 py-1 rounded-md hover:bg-red-600 text-nowrap">
+                                                   login
+                                                </button>
+                                             </div>
+                                          </NavLink>
+                                       </div>
+                                    </div>
+                                 </div>
+                              )}
+                           </section>
+                        </section>
+                     )}
+
+                     {(user || gest) && (
+                        <div>
+                           <li className="hover:bg-gray-100 rounded-full cursor-pointer hover:scale-110 transition-transform duration-300">
+                              <button onClick={() => setviewlike(!viewlike)}>
+                                 <i className="fa-solid fa-heart"></i>
+                              </button>
+                           </li>
+                        </div>
+                     )}
+
+                     <NavLink to={"cartsection"}>
+                        {(user || gest) && (
+                           <div className="relative">
+                              {cartItems.length > 0 && (
+                                 <p className="absolute -top-2.5 -right-2.5 z-10 text-white bg-red-500 w-4 h-4 flex justify-center items-center rounded-full font-bold text-md px-0.5">
+                                    {cartItems.length}
+                                 </p>
+                              )}
+                              <li className="hover:bg-gray-100 rounded-full cursor-pointer hover:scale-110 transition-transform duration-300">
+                                 <i className="fa-solid fa-cart-shopping"></i>
+                              </li>
+                           </div>
+                        )}
                      </NavLink>
                   </ul>
                   {/* {carded && (
@@ -250,39 +401,22 @@ function Nav() {
                {menuOpen && (
                   <div className="absolute top-full right-5 w-40 bg-amber-200 shadow-md rounded-b-md z-50 md:hidden">
                      <ul className="flex flex-col items-center py-3 font-semibold gap-2">
-                        <NavLink to='/'>
-                              <li className="hover:text-amber-600">
-                              Home
-                        </li>
+                        <NavLink to="/root">
+                           <li className="hover:text-amber-600">Home</li>
                         </NavLink>
-                        
-                        <NavLink to='/aboutus'>
-                            <li className="hover:text-amber-600">
-                              About Us
-                        </li>
+
+                        <NavLink to="aboutus">
+                           <li className="hover:text-amber-600">About Us</li>
                         </NavLink>
-                       <NavLink to='/contact'>
-                        <li className="hover:text-amber-600">
-                              Contact
-                        </li>
-                       </NavLink>
-                        
-                        <NavLink to='/customorders'>
+
+                        <NavLink to="customorders">
                            <li className="hover:text-amber-600">
                               Custom Orders
-
                            </li>
                         </NavLink>
-                        <NavLink to='/offers'>
-                           <li className="hover:text-amber-600">
-                              Offers
-                           </li>
+                        <NavLink to="offers">
+                           <li className="hover:text-amber-600">Offers</li>
                         </NavLink>
-                        <li>
-                           <a href="#" >
-                             Silver
-                           </a>
-                        </li>
                      </ul>
                   </div>
                )}

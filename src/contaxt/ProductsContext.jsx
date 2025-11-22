@@ -56,6 +56,7 @@ const ProductsProvider = ({ children }) => {
 
    // add to card
    const [cartItems, setCartItems] = useState([]);
+   const [likeItem , setlikeItem] =useState([]);
 
 
    const value = {
@@ -83,6 +84,9 @@ const ProductsProvider = ({ children }) => {
       //add to card section
       cartItems,
       setCartItems,
+      //like item
+      likeItem,
+      setlikeItem
 
    };
 

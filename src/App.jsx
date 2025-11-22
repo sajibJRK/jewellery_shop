@@ -109,7 +109,7 @@ function App() {
             <CategoryShowcase />
 
             <div>
-               <ContactSection/>
+               <ContactSection />
             </div>
 
             <Footer />

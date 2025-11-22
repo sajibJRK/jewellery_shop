@@ -2,11 +2,13 @@ import React, { use, useState } from "react";
 import { FaShoppingCart } from "react-icons/fa";
 import { IoHeart } from "react-icons/io5";
 import { ProductsContext } from "../contaxt/ProductsContext";
+import { BuypageContext } from "../contaxt/BuypageContext";
 
 export default function Card({ item }) {
+   const { OpenBuy, setOpenBuy, BuyItem, setBuyItem } = use(BuypageContext);
    const [favourite, setFavourite] = useState(false);
    const [AddToCart, setAddToCart] = useState(false);
-   const { setCartItems } = use(ProductsContext);
+   const { setCartItems, setlikeItem } = use(ProductsContext);
 
    return (
       <div
@@ -18,6 +20,12 @@ export default function Card({ item }) {
             <button
                onClick={() => {
                   setFavourite(!favourite);
+                  setlikeItem((prev) => {
+                     if (prev.find((i) => i.id === item.id)) {
+                        return prev.filter((i) => i.id !== item.id);
+                     }
+                     return [...prev, item];
+                  });
                }}
                className={`transition-all duration-300 hover:scale-125 ${
                   favourite ? "text-[#FF4D67] " : "text-[#F7CE39] "
@@ -29,11 +37,9 @@ export default function Card({ item }) {
                onClick={() => {
                   setAddToCart(!AddToCart);
                   setCartItems((prev) => {
-                     // যদি item already cart এ থাকে → remove কর
                      if (prev.find((i) => i.id === item.id)) {
                         return prev.filter((i) => i.id !== item.id);
                      }
-                     // না থাকলে → add কর
                      return [...prev, item];
                   });
                }}
@@ -53,7 +59,7 @@ export default function Card({ item }) {
             />
          </div>
 
-         <h2 className="font-semibold text-xl text-[#F7CE39] tracking-wide mb-1 drop-shadow-[0_0_2px_#F7CE39]">
+         <h2 className="font-semibold text-xl text-[#F7CE39] tracking-wide mb-1 drop-shadow-[0_0_1px_#F7CE39]">
             {item.name}
          </h2>
 
@@ -68,7 +74,12 @@ export default function Card({ item }) {
          </p>
 
          {/* Shop Now Button */}
-         <button className="mt-1 bg-[#F7CE39] text-[#1C1C1C] py-2 px-5 rounded-lg cursor-pointer hover:scale-110 hover:shadow-[0_0_12px_rgba(247,206,57,0.6)] transition-all duration-300">
+         <button
+            className="mt-1 bg-[#F7CE39] text-[#1C1C1C] py-2 px-5 rounded-lg cursor-pointer hover:scale-110 hover:shadow-[0_0_12px_rgba(247,206,57,0.6)] transition-all duration-300"
+            onClick={() => {
+               setOpenBuy(!OpenBuy), setBuyItem(item);
+            }}
+         >
             BUY NOW
          </button>
       </div>

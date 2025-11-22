@@ -108,10 +108,10 @@ export default function CartSection() {
                                  onClick={() => handleSelectItem(item.id)}
                                  className={`px-3 py-1 text-2xl font-bold rounded-xl w-55  transition 
                                    ${
-                                        selectedItems.includes(item.id)
-                                            ? "bg-amber-400 text-black"
-                                              : "bg-green-500 text-white hover:bg-gray-600"
-                                              }`}
+                                      selectedItems.includes(item.id)
+                                         ? "bg-amber-400 text-black"
+                                         : "bg-green-500 text-white hover:bg-gray-600"
+                                   }`}
                               >
                                  {selectedItems.includes(item.id)
                                     ? "Selected"

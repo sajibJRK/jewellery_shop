@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import { use } from "react";
 import { FaShoppingCart } from "react-icons/fa";
 import { IoHeart } from "react-icons/io5";
+import { BuypageContext } from "../contaxt/BuypageContext";
 
 export default function TrendingCard({ item }) {
+   const { OpenBuy, setOpenBuy, BuyItem, setBuyItem } = use(BuypageContext);
    const [favourite, setFavourite] = useState(false);
 
    return (
@@ -50,7 +53,12 @@ export default function TrendingCard({ item }) {
 
          {/* Shop Button */}
          <a href={`#${item.id}`}>
-            <button className="mt-1 bg-[#F7CE39] text-[#4B3F2F] py-2 px-5 rounded-lg cursor-pointer hover:scale-110 hover:shadow-[0_0_12px_rgba(247,206,57,0.5)] transition-all duration-300">
+            <button
+               className="mt-1 bg-[#F7CE39] text-[#4B3F2F] py-2 px-5 rounded-lg cursor-pointer hover:scale-110 hover:shadow-[0_0_12px_rgba(247,206,57,0.5)] transition-all duration-300"
+               onClick={() => {
+                  setOpenBuy(!OpenBuy), setBuyItem(item);
+               }}
+            >
                SHOP NOW
             </button>
          </a>
