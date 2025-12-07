@@ -3,7 +3,7 @@ import { ProductsContext } from "../contaxt/ProductsContext";
 import LiveRates from "../components/LiveRates";
 
 export default function CustomOrders() {
-   const { customData, loading } = useContext(ProductsContext);
+   const { CustomData, loading } = useContext(ProductsContext);
 
    // ------------- PRICE TABLE -------------
    const metalRates = {
@@ -33,12 +33,15 @@ export default function CustomOrders() {
    const [stoneCost, setStoneCost] = useState("");
 
    // Set default values
+
    useEffect(() => {
-      setMaterial(customData.formFields.material[0] || "");
-      setGemstone(customData.formFields.gemstone[0] || "");
-      setDesignType(customData.formFields.designType[0] || "");
-   }, [customData]);
-   if (loading || !customData || !customData.formFields)
+      if (!CustomData || !CustomData.formFields) return;
+      setMaterial(CustomData.formFields.material[0] || "");
+      setGemstone(CustomData.formFields.gemstone[0] || "");
+      setDesignType(CustomData.formFields.designType[0] || "");
+   }, [CustomData]);
+
+   if (!CustomData || !CustomData.formFields)
       return <p className="text-center py-10">Loading...</p>;
    // ------------ TOTAL PRICE CALC --------------
    const totalAmount = (() => {
@@ -58,10 +61,10 @@ export default function CustomOrders() {
             {/* Header */}
             <div className="text-center mb-12">
                <h2 className="text-3xl md:text-5xl text-yellow-100 font-bold drop-shadow-[0_0_3px_rgba(247,206,57,1)] mb-3">
-                  {customData.title} / কাস্টম ডিজাইন
+                  {CustomData.title} / কাস্টম ডিজাইন
                </h2>
                <p className="text-gray-200 text-xl font-semibold max-w-2xl mx-auto">
-                  {customData.description}
+                  {CustomData.description}
                </p>
             </div>
             <LiveRates />
@@ -93,7 +96,7 @@ export default function CustomOrders() {
                         onChange={(e) => setMaterial(e.target.value)}
                         className="border border-yellow-400 rounded-xl px-4 py-3 bg-yellow-50 text-black"
                      >
-                        {customData.formFields.material.map((m, i) => (
+                        {CustomData.formFields.material.map((m, i) => (
                            <option key={i}>{m}</option>
                         ))}
                      </select>
@@ -103,7 +106,7 @@ export default function CustomOrders() {
                         onChange={(e) => setGemstone(e.target.value)}
                         className="border border-yellow-400 rounded-xl px-4 py-3 bg-yellow-50 text-black"
                      >
-                        {customData.formFields.gemstone.map((g, i) => (
+                        {CustomData.formFields.gemstone.map((g, i) => (
                            <option key={i}>{g}</option>
                         ))}
                      </select>
@@ -116,7 +119,7 @@ export default function CustomOrders() {
                         onChange={(e) => setDesignType(e.target.value)}
                         className="border border-yellow-400 rounded-xl px-4 py-3 bg-yellow-50 text-black"
                      >
-                        {customData.formFields.designType.map((d, i) => (
+                        {CustomData.formFields.designType.map((d, i) => (
                            <option key={i}>{d}</option>
                         ))}
                      </select>
@@ -125,7 +128,6 @@ export default function CustomOrders() {
                         type="number"
                         placeholder="Weight (grams)"
                         value={weight}
-                        g
                         onChange={(e) => setWeight(e.target.value)}
                         className="border border-gray-300 rounded-xl px-4 py-3"
                      />
@@ -159,7 +161,7 @@ export default function CustomOrders() {
                   )}
 
                   <button
-                     type="submit"
+                     onClick={() => alert("Order Success")}
                      className="w-full bg-yellow-500 text-white py-3 rounded-2xl font-semibold text-lg"
                   >
                      Submit Custom Order
@@ -173,7 +175,7 @@ export default function CustomOrders() {
             </h3>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-               {customData.examples.map((ex) => (
+               {CustomData.examples.map((ex) => (
                   <div
                      key={ex.id}
                      className="bg-white rounded-3xl shadow-lg p-5 border"

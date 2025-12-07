@@ -15,7 +15,7 @@ const ProductsProvider = ({ children }) => {
    const [searchResults, setSearchResults] = useState([]);
 
    // custom data related
-   const [customData, setCustomData] = useState({});
+   const [CustomData, setCustomData] = useState({});
    const [loading, setLoading] = useState(true);
 
    // data fetch section
@@ -56,8 +56,7 @@ const ProductsProvider = ({ children }) => {
 
    // add to card
    const [cartItems, setCartItems] = useState([]);
-   const [likeItem , setlikeItem] =useState([]);
-
+   const [likeItem, setlikeItem] = useState([]);
 
    const value = {
       products,
@@ -78,7 +77,7 @@ const ProductsProvider = ({ children }) => {
       material,
 
       // custom data
-      customData,
+      CustomData,
       loading,
 
       //add to card section
@@ -86,10 +85,8 @@ const ProductsProvider = ({ children }) => {
       setCartItems,
       //like item
       likeItem,
-      setlikeItem
-
+      setlikeItem,
    };
-
 
    return (
       <ProductsContext.Provider value={value}>

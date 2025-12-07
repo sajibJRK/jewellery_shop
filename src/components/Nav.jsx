@@ -53,7 +53,7 @@ function Nav() {
          <div>
             {/* Modal for search results */}
             <dialog id="search_modal" className="modal">
-               <div className="modal-box w-[90%] max-w-md bg-[#0F1B2B] border border-amber-400 shadow-[0_0_20px_rgba(247,206,57,0.4)] rounded-md  overflow-hidden">
+               <div className="modal-box w-[90%] max-w-[1350px] bg-[#0F1B2B] border border-amber-400 shadow-[0_0_20px_rgba(247,206,57,0.4)] rounded-md  overflow-hidden">
                   {/* Fixed Top Bar with Close Button */}
                   <div className="sticky top-0 bg-[#0F1B2B] border-b border-amber-400 z-50 flex justify-between items-center px-4 py-3">
                      <h3 className="font-bold text-lg text-amber-300">{`Results for "${searchTerm}"`}</h3>
@@ -66,7 +66,7 @@ function Nav() {
                   </div>
 
                   {/* Scrollable Results Area */}
-                  <div className="max-h-[60vh] overflow-y-auto px-4 py-3">
+                  <div className="max-h-[60vh]  overflow-y-auto px-1 py-1">
                      {searchResults.length > 0 ? (
                         <div className="flex flex-col justify-center items-center gap-4">
                            {searchResults.map((item) => (
@@ -148,31 +148,31 @@ function Nav() {
 
                <div className="hidden md:block">
                   <ul className="font-bold flex gap-4 items-center justify-center">
-                     <NavLink to="/root">
+                     <NavLink to="/">
                         {" "}
                         <li className="hover:bg-gray-100 py-1 px-3 rounded-sm cursor-pointer hover:scale-110 transition-transform duration-300">
                            Home
                         </li>
                      </NavLink>
-                     <NavLink to="offers">
+                     <NavLink to="/offers">
                         <li className="hover:bg-gray-100 py-1 px-3 rounded-sm cursor-pointer hover:scale-110 transition-transform duration-300">
                            Offers
                         </li>
                      </NavLink>
 
-                     <NavLink to="/root">
+                     <NavLink to="/">
                         <li className="w-20 p-0.5 rounded-md bg-gray-800">
                            <img src="/image/logo2.png" alt="logo" />
                         </li>
                      </NavLink>
 
-                     <NavLink to="customorders">
+                     <NavLink to="/customorders">
                         <li className="hover:bg-gray-100 py-1 px-3 rounded-sm cursor-pointer hover:scale-110 transition-transform duration-300">
                            Custom Orders
                         </li>
                      </NavLink>
 
-                     <NavLink to="aboutus">
+                     <NavLink to="/aboutus">
                         <li className="hover:bg-gray-100 py-1 px-3 rounded-sm cursor-pointer hover:scale-110 transition-transform duration-300">
                            About Us
                         </li>
@@ -229,15 +229,16 @@ function Nav() {
                         </li>
                      </button>
                      {!user && !gest && (
-                        <button
-                           className="bg-red-600 text-white py-0.5 px-2 rounded-md"
-                           onClick={() => {
-                              setUser(null);
-                              window.location.replace("/");
-                           }}
-                        >
-                           login
-                        </button>
+                        <NavLink to="login">
+                           <button
+                              className="bg-red-600 text-white py-0.5 px-2 rounded-md"
+                              onClick={() => {
+                                 setUser(null);
+                              }}
+                           >
+                              login
+                           </button>
+                        </NavLink>
                      )}
 
                      {ViewUser && (
@@ -345,7 +346,7 @@ function Nav() {
                         </div>
                      )}
 
-                     <NavLink to={"cartsection"}>
+                     <NavLink to={"/cartsection"}>
                         {(user || gest) && (
                            <div className="relative">
                               {cartItems.length > 0 && (
@@ -401,20 +402,20 @@ function Nav() {
                {menuOpen && (
                   <div className="absolute top-full right-5 w-40 bg-amber-200 shadow-md rounded-b-md z-50 md:hidden">
                      <ul className="flex flex-col items-center py-3 font-semibold gap-2">
-                        <NavLink to="/root">
+                        <NavLink to="/">
                            <li className="hover:text-amber-600">Home</li>
                         </NavLink>
 
-                        <NavLink to="aboutus">
+                        <NavLink to="/aboutus">
                            <li className="hover:text-amber-600">About Us</li>
                         </NavLink>
 
-                        <NavLink to="customorders">
+                        <NavLink to="/customorders">
                            <li className="hover:text-amber-600">
                               Custom Orders
                            </li>
                         </NavLink>
-                        <NavLink to="offers">
+                        <NavLink to="/offers">
                            <li className="hover:text-amber-600">Offers</li>
                         </NavLink>
                      </ul>

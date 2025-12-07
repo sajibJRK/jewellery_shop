@@ -10,20 +10,21 @@ import Login from "../components/Login";
 import Profile from "../pages/Profile";
 
 const route = createBrowserRouter([
+  // {
+  //   path: "/",
+  //   element: <Login />,
+  // },
   {
-    path: "/",
-    element: <Login />,
-  },
-  {
-    path: "/root",               
+    path: "/",               
     element: <Root />,
     children: [
-      { index: true, element: <Home /> },  
-      { path: "aboutus", element: <AboutUs /> },
-      { path: "contact", element: <Contact /> },
-      { path: "customorders", element: <CustomOrders /> },
-      { path: "offers", element: <Offers /> },
-      { path: "cartsection", element: <CartSection /> },
+      { path:"/" , element: <Home /> },  
+      { path: "/aboutus", element: <AboutUs /> },
+      { path: "/contact", element: <Contact /> },
+      { path: "/customorders", element: <CustomOrders /> },
+      { path: "/offers", element: <Offers /> },
+      { path: "/cartsection", element: <CartSection /> },
+      { path: "/login" , element : <Login />}
     ]
       
   },

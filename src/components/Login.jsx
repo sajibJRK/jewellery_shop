@@ -31,7 +31,7 @@ export default function Login() {
             res.user?.name || res.user?.userName || userdata?.name || email;
 
          showToast(`Welcome ${name}`, "success");
-         navigate("/root");
+         navigate("/");
       } else {
          showToast(res?.message || "Login failed", "error");
       }
@@ -41,13 +41,13 @@ export default function Login() {
    const handleGuestLogin = () => {
       setgest(true);
       showToast("Logged in as guest", "info");
-      navigate("/root");
+      navigate("/");
    };
 
    // Skip
    const handleSkip = () => {
       showToast("You skipped login", "warning");
-      navigate("/root");
+      navigate("/");
    };
 
    return (
